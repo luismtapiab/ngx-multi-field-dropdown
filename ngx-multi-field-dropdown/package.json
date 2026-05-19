@@ -1,0 +1,45 @@
+{
+  "name": "ngx-multi-field-dropdown",
+  "version": "1.0.0",
+  "author": "Luis Tapia <lmtapia1024@gmail.com> https://luismtapiab.github.io",
+  "description": "A customizable Angular searchable dropdown with multi-field search support.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luismtapiab/ngx-multi-field-dropdown.git"
+  },
+  "bugs": {
+    "url": "https://github.com/luismtapiab/ngx-multi-field-dropdown/issues"
+  },
+  "homepage": "https://github.com/luismtapiab/ngx-multi-field-dropdown#readme",
+  "main": "index.ts",
+  "scripts": {
+    "build": "ng-packagr -p ng-package.json"
+  },
+  "keywords": [
+    "angular",
+    "dropdown",
+    "search",
+    "select",
+    "multi-field",
+    "signals"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "@angular/common": ">=17.0.0",
+    "@angular/core": ">=17.0.0",
+    "@angular/forms": ">=17.0.0"
+  },
+  "devDependencies": {
+    "@angular/common": "^21.2.0",
+    "@angular/compiler": "^21.2.0",
+    "@angular/compiler-cli": "^21.2.13",
+    "@angular/core": "^21.2.0",
+    "@angular/forms": "^21.2.0",
+    "@angular/platform-browser": "^21.2.0",
+    "@angular/router": "^21.2.0",
+    "ng-packagr": "^21.2.3",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0",
+    "typescript": "~5.9.2"
+  }
+}

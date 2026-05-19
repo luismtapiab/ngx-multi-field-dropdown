@@ -1,0 +1,68 @@
+<div #dropdownBox class="ngx-mfd" [class.ngx-mfd--open]="isOpen()">
+  <div class="ngx-mfd-trigger" (click)="toggleDropdown()">
+    <span class="ngx-mfd-trigger-text" [class.ngx-mfd-trigger-text--placeholder]="!displayed()">
+      {{ displayed() || placeholder() }}
+    </span>
+    <div class="ngx-mfd-trigger-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="m6 9 6 6 6-6"/>
+      </svg>
+    </div>
+  </div>
+
+  <div class="ngx-mfd-panel">
+    <div class="ngx-mfd-search">
+      <div class="ngx-mfd-search-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
+        </svg>
+      </div>
+      <input 
+        #searchInput 
+        type="text" 
+        [ngModel]="searchTerm()"
+        (ngModelChange)="onSearchChange($event)" 
+        debouncedInput 
+        [debounceTime]="debounceTime()" 
+        (focus)="onFocus()"
+        [placeholder]="placeholder()"
+        class="ngx-mfd-search-input"
+      >
+    </div>
+
+    <ul class="ngx-mfd-list">
+      @if(selectedItemIndex() !== -1) {
+        <li class="ngx-mfd-option ngx-mfd-option--reset" 
+            (click)="selectItem(null, -1)">
+          Clear selection
+        </li>
+      }
+      
+      @for(item of filteredItems(); track item; let i = $index) {
+        <li class="ngx-mfd-option" 
+            [class.ngx-mfd-option--selected]="selectedItemIndex() === i"
+            (click)="selectItem(item, i)">
+          <div class="ngx-mfd-option-content">
+            @for(key of displayKeys(); track key; let last = $last) {
+              <span class="ngx-mfd-field-value">{{ item[key] }}</span>
+              @if(!last) {
+                <span class="ngx-mfd-field-separator"> </span>
+              }
+            }
+          </div>
+          @if(selectedItemIndex() === i) {
+            <div class="ngx-mfd-check">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 6 9 17l-5-5"/>
+              </svg>
+            </div>
+          }
+        </li>
+      } @empty {
+        <li class="ngx-mfd-empty">
+          {{ notFoundText() }}
+        </li>
+      }
+    </ul>
+  </div>
+</div>
