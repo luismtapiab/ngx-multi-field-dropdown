@@ -12,7 +12,7 @@ bazel-out/
 
 # Packed tarballs
 *.tgz
-!archive/*.tgz
+!example/archive/*.tgz
 
 # Logs
 npm-debug.log*

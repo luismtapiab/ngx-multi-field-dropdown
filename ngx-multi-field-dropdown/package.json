@@ -1,6 +1,6 @@
 {
   "name": "ngx-multi-field-dropdown",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Luis Tapia <lmtapia1024@gmail.com> https://luismtapiab.github.io",
   "description": "A customizable Angular searchable dropdown with multi-field search support.",
   "repository": {
