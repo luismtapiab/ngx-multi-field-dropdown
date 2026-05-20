@@ -93,10 +93,6 @@ You can override the following CSS variables globally (e.g., in your `:root` or 
 }
 ```
 
-## Acknowledgements
-
-Extracted from the `centro-parasol` project. Special thanks to the original implementation for the powerful multi-field search logic.
-
 ## License
 
 MIT

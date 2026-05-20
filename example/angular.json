@@ -46,6 +46,10 @@
           "builder": "@angular/build:application",
           "options": {
             "preserveSymlinks": true,
+            "outputPath": {
+              "base": "../docs",
+              "browser": ""
+            },
             "browser": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
@@ -61,6 +65,27 @@
           },
           "configurations": {
             "production": {
+              "baseHref": "/ngx-multi-field-dropdown/",
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "4kB",
+                  "maximumError": "8kB"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "normal": {
+              "outputPath": {
+                "base": "dist/example",
+                "browser": ""
+              },
+              "baseHref": "/",
               "budgets": [
                 {
                   "type": "initial",

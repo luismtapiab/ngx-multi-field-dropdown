@@ -5,6 +5,8 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:normal": "ng build --configuration normal",
+    "postbuild": "node -e \"const fs = require('fs'); fs.copyFileSync('../docs/index.html', '../docs/404.html'); fs.writeFileSync('../docs/.nojekyll', '');\"",
     "watch": "ng build --watch --configuration development"
   },
   "private": true,
