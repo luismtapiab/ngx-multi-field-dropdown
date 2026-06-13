@@ -1,0 +1,30 @@
+name: Verify Docker and Deploy
+
+on:
+  push:
+    branches: [ master ]
+jobs:
+  validate-docker:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v5
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+      - name: Run Dockerfile Build Check
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: ./Dockerfile
+          call: check # Performs dry-run analysis; fails if violations are found
+
+  trigger-deploy:
+    runs-on: ubuntu-latest
+    environment: render
+    needs: validate-docker
+    steps:
+      - name: Call Render Deployment Hook
+        # Replace curl with your provider's custom action if available
+        run: |
+          curl -X POST "${{ secrets.RENDER_DEPLOY_HOOK }}"
