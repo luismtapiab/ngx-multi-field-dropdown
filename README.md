@@ -4,7 +4,17 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/luismtapiab/ngx-multi-field-dropdown/tree/master/example)
 
+![Preview of Luis Tapia angular dropdown](preview.png)
 A customizable, lightweight, and high-performance Angular searchable dropdown component with multi-field search support. Driven by **Angular Signals** for optimal performance and reactivity.
+
+Demo:
+
+- Live demo on Render: https://ngx-multi-field-dropdown.onrender.com/ (preview built with Docker, made during this excelent course:  http://devopswithdocker.com)
+
+- Github Pages: https://luismtapiab.github.io/ngx-multi-field-dropdown
+
+- or in StackBlitz:
+👉 **[Open in StackBlitz Live Editor](https://stackblitz.com/github/luismtapiab/ngx-multi-field-dropdown/tree/master/example)**
 
 ---
 
@@ -15,13 +25,6 @@ A customizable, lightweight, and high-performance Angular searchable dropdown co
 - ⌨️ **Keyboard Navigation**: Designed with accessibility in mind.
 - 📦 **No Workspaces Required**: Completely standalone structures for simple local development and robust packaging.
 
----
-
-## 🚀 Live Demo on StackBlitz
-You can view and test the example application in real-time on StackBlitz:
-👉 **[Open in StackBlitz Live Editor](https://stackblitz.com/github/luismtapiab/ngx-multi-field-dropdown/tree/master/example)**
-
----
 
 ## 📂 Repository Structure
 This repository contains both the library source code and a clean, fully-functioning example application:
