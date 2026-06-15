@@ -1,10 +1,13 @@
-FROM ubuntu
-EXPOSE 3000
+FROM node:20-alpine AS builder
 WORKDIR /app
-RUN apt update
-RUN apt install nodejs npm -y
 COPY . .
-RUN npm install
-RUN npm run build:normal
-RUN npm install -g serve
-CMD ["serve", "-s", "-l", "3000", "dist/example"]
+RUN npm install && npm install -g serve && npm run build:normal 
+
+FROM busybox
+COPY --from=builder /app/dist/example /www
+RUN adduser -D appuser
+USER appuser
+EXPOSE 3000
+CMD ["httpd","-f","-p","3000","-h","/www"]
+
+
